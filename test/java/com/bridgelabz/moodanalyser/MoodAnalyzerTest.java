@@ -37,4 +37,13 @@ public class MoodAnalyzerTest {
 		MoodAnalyzer moodAnalyzer=new MoodAnalyzer(); 
 		moodAnalyzer.analyseMood();     
 	}
+
+	@Test
+	public void testAnalyseMood_Shouldthrow_NullPointerException() {
+		String message=null;
+		MoodAnalyzer moodAnalyzer=new MoodAnalyzer(message); 
+		String mood=moodAnalyzer.analyseMood();  
+		assertEquals("HAPPY", mood);
+	}
+
 }
