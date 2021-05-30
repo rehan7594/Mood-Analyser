@@ -8,7 +8,8 @@ public class MoodAnalyzerTest {
 	@Test
 	public void testAnalyseMood_Shouldreturn_Happy( ) {
 		String message="I am in happy Mood";
-		String mood=MoodAnalyzer.analyseMood(message);
+		MoodAnalyzer moodAnalyzer=new MoodAnalyzer(message); 
+		String mood=moodAnalyzer.analyseMood();
 		assertEquals("HAPPY", mood);	
 
 	}
@@ -16,7 +17,8 @@ public class MoodAnalyzerTest {
 	@Test
 	public void testAnalyseMood_Shouldreturn_Sad( ) {
 		String message="I am in SAD Mood";
-		String mood=MoodAnalyzer.analyseMood(message);
+		MoodAnalyzer moodAnalyzer=new MoodAnalyzer(message); 
+		String mood=moodAnalyzer.analyseMood();
 		assertEquals("SAD", mood);	
 
 	}
@@ -24,8 +26,15 @@ public class MoodAnalyzerTest {
 	@Test
 	public void testAnalyseMood_Shouldreturn_happy( ) {
 		String message="I am in Any Mood";
-		String mood=MoodAnalyzer.analyseMood(message);
+		MoodAnalyzer moodAnalyzer=new MoodAnalyzer(message); 
+		String mood=moodAnalyzer.analyseMood();
 		assertEquals("HAPPY", mood);	
 
+	}
+
+	@Test
+	public void testAnalyseMood_Shouldthrow_nullPointerException() {
+		MoodAnalyzer moodAnalyzer=new MoodAnalyzer(); 
+		moodAnalyzer.analyseMood();     
 	}
 }
